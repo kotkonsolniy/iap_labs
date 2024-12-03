@@ -89,27 +89,33 @@ def main():
         choice = input("Выберите действие: ")
 
         if choice == '1':
+            print("Списорк всех книг:")
             print_books(conn)
         elif choice == '2':
+            print("Списорк всех читателей:")
             print_readers(conn)
         elif choice == '3':
             author = input("Автор: ")
             title = input("Название: ")
             publish_year = input("Год издания: ")
             add_book(conn, author, title, publish_year)
+            print("Книга успешно добавлена")
         elif choice == '4':
             name = input("Имя читателя: ")
             add_reader(conn, name)
+            print("Читатель успешно добавлен")
         elif choice == '5':
             reader_id = input("ID читателя: ")
             book_id = input("ID книги: ")
             taking_date = input("Дата выдачи (ГГГГ-ММ-ДД): ")
             give_book(conn, reader_id, book_id, taking_date)
+            print("Книга получена")
         elif choice == '6':
             reader_id = input("ID читателя: ")
             book_id = input("ID книги: ")
             returning_date = input("Дата возврата (ГГГГ-ММ-ДД): ")
             return_book(conn, reader_id, book_id, returning_date)
+            print("Книга возвращена")
         elif choice == '7':
             break
         else:
